@@ -53,21 +53,40 @@ export default function App() {
       })} */}
 
           <div className="buttons">
-            <button
+            {/* <button
               style={{ backgroundColor: "#7950f2", color: "#ffffff" }}
               onClick={handlePrevious}
             >
               Previous
-            </button>
-            <button
-              style={{ backgroundColor: "#7950f2", color: "#ffffff" }}
+            </button> */}
+            <Button
+              textColor={"#ffffff"}
+              bgColor={"#7950f2"}
+              onClick={handlePrevious}
+            >
+              Previous
+            </Button>
+            <Button
+              textColor={"#ffffff"}
+              bgColor={"#7950f2"}
               onClick={handleNext}
             >
               Next
-            </button>
+            </Button>
           </div>
         </div>
       ) : null}
     </React.Fragment>
+  );
+}
+
+function Button({ textColor, bgColor, onClick, children }) {
+  return (
+    <button
+      style={{ backgroundColor: bgColor, color: textColor }}
+      onClick={onClick}
+    >
+      {children}
+    </button>
   );
 }
